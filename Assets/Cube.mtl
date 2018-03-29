@@ -1,0 +1,8 @@
+newmtl Rubber_OldWornRubber
+map_Kd Rubber_OldWornRubber.sbsar
+map_Pm Rubber_OldWornRubber.sbsar
+bump Rubber_OldWornRubber.sbsar
+disp Rubber_OldWornRubber.sbsar
+Kd 1 1 1
+d 1
+
