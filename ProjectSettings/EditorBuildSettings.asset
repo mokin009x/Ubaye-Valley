@@ -6,8 +6,5 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Pascal/newtestscene.unity
-    guid: 4c405cccc38f15540b0c095a65c34e6f
-  - enabled: 0
     path: Assets/Pascal/TestScene.unity
     guid: ab001c2a64c13c44d89a3a43dfb21c82
