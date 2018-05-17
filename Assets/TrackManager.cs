@@ -7,7 +7,7 @@ using UnityEngine.Experimental.UIElements;
 public class TrackManager : MonoBehaviour
 {
     public GameObject startpiece;
-    public TrackBuilderScript TrackBuilderRefference;
+    public TrackBuilderScript TrackBuilderReference;
     public GameObject CurrentCollider;
     public Button test;
     public bool foundStartPiece;
@@ -15,10 +15,18 @@ public class TrackManager : MonoBehaviour
     public GameObject StraightPiecePrefab;
 	public GameObject CornerPiecePrefab;
 
+	public Vector3 trackSpawnLocation;
+	public Vector3 nextTrackSpawnModifier;
+	
+	
+	
 	public int Random;
 	// Use this for initialization
     private void Awake()
     {
+	    trackSpawnLocation = Vector3.zero;
+	    nextTrackSpawnModifier = Vector3.zero;
+
         foundStartPiece = false;
 	    Random = 0;
     }
@@ -33,13 +41,14 @@ public class TrackManager : MonoBehaviour
 
 	    if (Input.GetKeyDown(KeyCode.Space))
 	    {
-		    
-	        FindStartPiece();
-	        BuildTrack();
+		    BuildTrack();
+
         }
 
-        if (Input.GetKeyDown(KeyCode.B)&& foundStartPiece==true)
+        if (Input.GetKeyDown(KeyCode.A))
 	    {
+		    FindStartPiece();
+
 	    }
 
 	    
@@ -50,7 +59,7 @@ public class TrackManager : MonoBehaviour
         var startInScene = GameObject.Find("StartPiece/Random");
 	    Debug.Log("test");
 	    startpiece = startInScene;
-	    TrackBuilderRefference = startInScene.GetComponent<TrackBuilderScript>();
+	    TrackBuilderReference = startInScene.GetComponent<TrackBuilderScript>();
 	    foundStartPiece = true;
     }
 
@@ -58,38 +67,44 @@ public class TrackManager : MonoBehaviour
     {
 	    Random = Random + 1;
 	    
-	    /*
-	    if (TrackBuilderRefference.CurrentPieceType == TrackBuilderScript.TrackPieceType.Straight)
+	    if (TrackBuilderReference.CurrentPieceType == TrackBuilderScript.TrackPieceType.Straight)
 	    {
-		    Instantiate(CornerPiecePrefab, new Vector3(0,0,10+ Random), Quaternion.identity);
-		    TrackBuilderRefference.FrontCollider.DetectingNow = true;
+		    Debug.Log(TrackBuilderReference.CurrentPieceType);
+		    nextTrackSpawnModifier = nextTrackSpawnModifier + new Vector3(0, 0, 9);
+		    Instantiate(StraightPiecePrefab, trackSpawnLocation+nextTrackSpawnModifier, Quaternion.identity);
 
 		    Debug.Log("you got here");
-		    TrackBuilderRefference = TrackBuilderRefference.NextBuilder;
+
 	    }
-	    */
+	    else if (TrackBuilderReference.CurrentPieceType == TrackBuilderScript.TrackPieceType.Corner)
+	    {
+		    Debug.Log(TrackBuilderReference.CurrentPieceType);
 
-	    
+		    nextTrackSpawnModifier = nextTrackSpawnModifier + new Vector3(0, 0, 9);
+
+		    Instantiate(CornerPiecePrefab, trackSpawnLocation+nextTrackSpawnModifier, Quaternion.Euler(0,180,0));
+
+		    Debug.Log("you got here");
 		    
-	    if (TrackBuilderRefference.CurrentPieceType == TrackBuilderScript.TrackPieceType.Corner)
-		    {
-			    Instantiate(StraightPiecePrefab, new Vector3(0,0,10+ Random), Quaternion.identity);
-			    TrackBuilderRefference.FrontCollider.DetectingNow = true;
 
-			    Debug.Log("you got here");
-			    TrackBuilderRefference = TrackBuilderRefference.NextBuilder;
-			    
- 
-		    }  
-	    
-		   
-	    
-		   
 
-		   
-	    
-      
+	    }
+	    else
+	    {
+		    
+	    }
+
+	    Builder();
+
     }
+	void Builder()
+	{
+		TrackBuilderReference.ActiveScript = false;
+		TrackBuilderReference = TrackBuilderReference.NextBuilder;
+		TrackBuilderReference.ActiveScript = true;
+		TrackBuilderReference.FrontCollider.DetectingNow = true;
+
+	}
 
   
 }

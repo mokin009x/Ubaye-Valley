@@ -24,15 +24,15 @@ public class TrackBuilderScript : MonoBehaviour
 	private void Awake()
 	{
 		ActiveScript = false;
-		
-	}
-
-	void Start()
-	{
 		if (this.gameObject.CompareTag("Finish"))
 		{
 			ActiveScript = true;
 		}
+	}
+
+	void Start()
+	{
+		
 		BackCollider = gameObject.transform.GetChild(0).GetComponent<TrackDetections>();
 		FrontCollider = gameObject.transform.GetChild(1).GetComponent<TrackDetections>();
 	}
@@ -45,23 +45,20 @@ public class TrackBuilderScript : MonoBehaviour
 
 	private void TrackDetectionEvent()
 	{
-		if (gameObject.CompareTag("Finish"))
-		{
-			ActiveScript = false;
-		}
+		
 		if (ActiveScript == true)
 		{
 			if (FrontCollider.DetectedPiece == 1)
 			{
 				CurrentPieceType = TrackPieceType.Corner;
-				//NextBuilder = FrontCollider.DetectedObj.GetComponent<TrackBuilderScript>();
+				NextBuilder = FrontCollider.DetectedObj.GetComponent<TrackBuilderScript>();
 			}
 			if (FrontCollider.DetectedPiece == 0)
 			{
 				CurrentPieceType = TrackPieceType.Straight;
-				//NextBuilder = FrontCollider.DetectedObj.GetComponent<TrackBuilderScript>();
+				NextBuilder = FrontCollider.DetectedObj.GetComponent<TrackBuilderScript>();
 
-			
+
 			}
 		}
 		

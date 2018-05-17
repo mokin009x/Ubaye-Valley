@@ -7,21 +7,25 @@ public class TrackDetections : MonoBehaviour {
 
 
 	public int DetectedPiece;
-	public bool DetectingNow;
+	public bool DetectingNow = true;
 	public GameObject DetectedObj;
 	// Use this for initialization
 	private void Awake()
 	{
-		DetectingNow = true;
 	}
 
 	void Start () {
-		
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (DetectedObj == null)
+		{
+			DetectingNow = true;
+
+		}
+
 	}
 
 	private void OnTriggerStay(Collider coll)
@@ -33,8 +37,8 @@ public class TrackDetections : MonoBehaviour {
 			{
 				DetectedObj = coll.gameObject;
 				DetectedPiece = 1;
-				DetectingNow = false;
 				Debug.Log(DetectedPiece);
+				DetectingNow = false;
 
 			}
 
@@ -42,17 +46,16 @@ public class TrackDetections : MonoBehaviour {
 			{
 				DetectedObj = coll.gameObject;
 				DetectedPiece = 0;
-				DetectingNow = false;
 				Debug.Log(DetectedPiece);
-
+				DetectingNow = false;
 			}	
 		}
 		else
 		{
 			
 		}
-			
-		
-		
+
+
+
 	}
 }
