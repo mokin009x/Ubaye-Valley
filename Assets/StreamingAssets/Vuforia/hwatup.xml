@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="StartLine" size="0.300000 0.300000" />
+    <ImageTarget name="left" size="0.300000 0.300000" />
+    <ImageTarget name="CornerArrow" size="0.300000 0.300000" />
+    <ImageTarget name="Straight_Arrow" size="0.300000 0.300000" />
+    <ImageTarget name="zafira-3" size="3.000000 1.869000" />
+    <ImageTarget name="volvo-XC90-clarkson-review" size="3.000000 1.869000" />
+    <ImageTarget name="mustang-1" size="3.000000 1.869000" />
+    <ImageTarget name="mx-5-1" size="3.000000 1.869000" />
+    <ImageTarget name="Mercedes-AMG1" size="3.000000 1.869000" />
+    <ImageTarget name="maxresdefault" size="3.000000 2.250000" />
+    <ImageTarget name="Lamborghini-Aventador" size="3.000000 1.869000" />
+    <ImageTarget name="clarkson-488-1" size="3.000000 1.869000" />
+    <ImageTarget name="bmw-m2" size="3.000000 1.869000" />
+    <ImageTarget name="Alfa-Romeo-4c" size="3.000000 1.869000" />
+    <ImageTarget name="Auto-rood-1" size="3.000000 2.250000" />
+    <ImageTarget name="auto-geel-original" size="3.000000 1.832813" />
+    <ImageTarget name="xayah" size="20.000000 28.288889" />
+  </Tracking>
+</QCARConfig>

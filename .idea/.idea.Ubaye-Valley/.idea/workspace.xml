@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f092eeb1-275c-4002-9ca0-a730e0b3147f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/StartPiece.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/StartPiece.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TrackCornerPiece.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TrackCornerPiece.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TrackStraightPiece.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/TrackStraightPiece.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ProCore/ProBuilder/Data/ProBuilderPreferences.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ProCore/ProBuilder/Data/ProBuilderPreferences.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/VuforiaConfiguration.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/VuforiaConfiguration.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TrackBuilderScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TrackBuilderScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TrackManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TrackManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/upgraded to 2018 unity version.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/upgraded to 2018 unity version.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="TrackManager.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/TrackManager.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+              <folding>
+                <marker date="1526556716982" expanded="false" signature="6:153" ph="..." />
+                <marker date="1526556716982" expanded="true" signature="196:2071" ph="{...}" />
+                <marker date="1526556716982" expanded="true" signature="542:604" ph="{...}" />
+                <marker date="1526556716982" expanded="true" signature="624:634" ph="{...}" />
+                <marker date="1526556716982" expanded="true" signature="688:898" ph="{...}" />
+                <marker date="1526556716982" expanded="true" signature="734:808" ph="{...}" />
+                <marker date="1526556716982" expanded="true" signature="874:888" ph="{...}" />
+                <marker date="1526556716982" expanded="true" signature="932:1173" ph="{...}" />
+                <marker date="1526556716982" expanded="true" signature="1203:2065" ph="{...}" />
+                <marker date="1526556716982" expanded="true" signature="1247:1620" ph="/* if (TrackBuilderRefference.CurrentPieceType == TrackBuilderScript.TrackPieceType.Straight) ... */" />
+                <marker date="1526556716982" expanded="true" signature="1728:2013" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TrackBuilderScript.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/TrackBuilderScript.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+              <folding>
+                <marker date="1526557273029" expanded="false" signature="6:125" ph="..." />
+                <marker date="1526557273029" expanded="true" signature="174:1387" ph="{...}" />
+                <marker date="1526557273029" expanded="true" signature="231:269" ph="{...}" />
+                <marker date="1526557273029" expanded="true" signature="485:518" ph="{...}" />
+                <marker date="1526557273029" expanded="true" signature="533:782" ph="{...}" />
+                <marker date="1526557273029" expanded="true" signature="580:612" ph="{...}" />
+                <marker date="1526557273029" expanded="true" signature="834:865" ph="{...}" />
+                <marker date="1526557273029" expanded="true" signature="902:1384" ph="{...}" />
+                <marker date="1526557273029" expanded="true" signature="944:977" ph="{...}" />
+                <marker date="1526557273029" expanded="true" signature="1005:1378" ph="{...}" />
+                <marker date="1526557273029" expanded="true" signature="1050:1188" ph="{...}" />
+                <marker date="1526557273029" expanded="true" signature="1229:1374" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TrackDetections.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/TrackDetections.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+              <folding>
+                <marker date="1526557273014" expanded="false" signature="6:107" ph="..." />
+                <marker date="1526557273014" expanded="true" signature="154:884" ph="{...}" />
+                <marker date="1526557273014" expanded="true" signature="297:326" ph="{...}" />
+                <marker date="1526557273014" expanded="true" signature="343:350" ph="{...}" />
+                <marker date="1526557273014" expanded="true" signature="405:412" ph="{...}" />
+                <marker date="1526557273014" expanded="true" signature="456:882" ph="{...}" />
+                <marker date="1526557273014" expanded="true" signature="488:850" ph="{...}" />
+                <marker date="1526557273014" expanded="true" signature="542:667" ph="{...}" />
+                <marker date="1526557273014" expanded="true" signature="720:845" ph="{...}" />
+                <marker date="1526557273014" expanded="true" signature="857:869" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/TrackBuilderScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TrackManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TrackDetections.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/TrackManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/TrackDetections.cs" />
+        <option value="$PROJECT_DIR$/Assets/TrackBuilderScript.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="245" />
+    <option name="y" value="44" />
+    <option name="width" value="1604" />
+    <option name="height" value="956" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="UnityExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="SolutionExplorer">
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+      <pane id="UnityExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Ubaye-Valley" type="483dac07:UnityExplorerNode$Root" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-hidden-items" value="false" />
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="DetectedObj&#9;null&#9;null" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f092eeb1-275c-4002-9ca0-a730e0b3147f" name="Default" comment="" />
+      <created>1525955244573</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1525955244573</updated>
+      <workItem from="1525955250539" duration="184000" />
+      <workItem from="1525955482077" duration="6570000" />
+      <workItem from="1526282428258" duration="2118000" />
+      <workItem from="1526284959923" duration="7154000" />
+      <workItem from="1526555300597" duration="1971000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="17997000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="245" y="44" width="1604" height="956" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Errors In Solution" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" weight="0.32936978" />
+      <window_info anchor="bottom" id="Unit Tests" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Unity" order="13" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="NuGet" order="11" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" isUnityUI="true" />
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/TrackManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="63" column="76" lean-forward="true" selection-start-line="63" selection-start-column="76" selection-end-line="63" selection-end-column="76" />
+          <folding>
+            <marker date="1526556716982" expanded="false" signature="6:153" ph="..." />
+            <marker date="1526556716982" expanded="true" signature="196:2071" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="542:604" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="624:634" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="688:898" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="734:808" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="874:888" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="932:1173" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="1203:2065" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="1247:1620" ph="/* if (TrackBuilderRefference.CurrentPieceType == TrackBuilderScript.TrackPieceType.Straight) ... */" />
+            <marker date="1526556716982" expanded="true" signature="1728:2013" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TrackBuilderScript.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
+          <folding>
+            <marker date="1526557273029" expanded="false" signature="6:125" ph="..." />
+            <marker date="1526557273029" expanded="true" signature="174:1387" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="231:269" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="485:518" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="533:782" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="580:612" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="834:865" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="902:1384" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="944:977" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="1005:1378" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="1050:1188" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="1229:1374" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TrackDetections.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="42" />
+          <folding>
+            <marker date="1526557273014" expanded="false" signature="6:107" ph="..." />
+            <marker date="1526557273014" expanded="true" signature="154:884" ph="{...}" />
+            <marker date="1526557273014" expanded="true" signature="297:326" ph="{...}" />
+            <marker date="1526557273014" expanded="true" signature="343:350" ph="{...}" />
+            <marker date="1526557273014" expanded="true" signature="405:412" ph="{...}" />
+            <marker date="1526557273014" expanded="true" signature="456:882" ph="{...}" />
+            <marker date="1526557273014" expanded="true" signature="488:850" ph="{...}" />
+            <marker date="1526557273014" expanded="true" signature="542:667" ph="{...}" />
+            <marker date="1526557273014" expanded="true" signature="720:845" ph="{...}" />
+            <marker date="1526557273014" expanded="true" signature="857:869" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TrackManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="64" column="13" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
+          <folding>
+            <marker date="1526556716982" expanded="false" signature="6:153" ph="..." />
+            <marker date="1526556716982" expanded="true" signature="196:2071" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="542:604" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="624:634" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="688:898" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="734:808" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="874:888" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="932:1173" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="1203:2065" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="1247:1620" ph="/* if (TrackBuilderRefference.CurrentPieceType == TrackBuilderScript.TrackPieceType.Straight) ... */" />
+            <marker date="1526556716982" expanded="true" signature="1728:2013" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TrackBuilderScript.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="35" column="38" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
+          <folding>
+            <marker date="1526557273029" expanded="false" signature="6:125" ph="..." />
+            <marker date="1526557273029" expanded="true" signature="174:1387" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="231:269" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="485:518" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="533:782" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="580:612" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="834:865" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="902:1384" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="944:977" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="1005:1378" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="1050:1188" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="1229:1374" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TrackManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="69" column="51" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="51" />
+          <folding>
+            <marker date="1526556716982" expanded="false" signature="6:153" ph="..." />
+            <marker date="1526556716982" expanded="true" signature="196:2071" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="542:604" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="624:634" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="688:898" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="734:808" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="874:888" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="932:1173" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="1203:2065" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="1247:1620" ph="/* if (TrackBuilderRefference.CurrentPieceType == TrackBuilderScript.TrackPieceType.Straight) ... */" />
+            <marker date="1526556716982" expanded="true" signature="1728:2013" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TrackBuilderScript.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <marker date="1526557273029" expanded="false" signature="6:125" ph="..." />
+            <marker date="1526557273029" expanded="true" signature="174:1387" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="231:269" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="485:518" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="533:782" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="580:612" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="834:865" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="902:1384" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="944:977" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="1005:1378" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="1050:1188" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="1229:1374" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TrackManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding>
+            <marker date="1526556716982" expanded="false" signature="6:153" ph="..." />
+            <marker date="1526556716982" expanded="true" signature="196:2071" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="542:604" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="624:634" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="688:898" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="734:808" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="874:888" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="932:1173" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="1203:2065" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="1247:1620" ph="/* if (TrackBuilderRefference.CurrentPieceType == TrackBuilderScript.TrackPieceType.Straight) ... */" />
+            <marker date="1526556716982" expanded="true" signature="1728:2013" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TrackDetections.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+          <folding>
+            <marker date="1526557273014" expanded="false" signature="6:107" ph="..." />
+            <marker date="1526557273014" expanded="true" signature="154:884" ph="{...}" />
+            <marker date="1526557273014" expanded="true" signature="297:326" ph="{...}" />
+            <marker date="1526557273014" expanded="true" signature="343:350" ph="{...}" />
+            <marker date="1526557273014" expanded="true" signature="405:412" ph="{...}" />
+            <marker date="1526557273014" expanded="true" signature="456:882" ph="{...}" />
+            <marker date="1526557273014" expanded="true" signature="488:850" ph="{...}" />
+            <marker date="1526557273014" expanded="true" signature="542:667" ph="{...}" />
+            <marker date="1526557273014" expanded="true" signature="720:845" ph="{...}" />
+            <marker date="1526557273014" expanded="true" signature="857:869" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TrackManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+          <folding>
+            <marker date="1526556716982" expanded="false" signature="6:153" ph="..." />
+            <marker date="1526556716982" expanded="true" signature="196:2071" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="542:604" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="624:634" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="688:898" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="734:808" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="874:888" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="932:1173" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="1203:2065" ph="{...}" />
+            <marker date="1526556716982" expanded="true" signature="1247:1620" ph="/* if (TrackBuilderRefference.CurrentPieceType == TrackBuilderScript.TrackPieceType.Straight) ... */" />
+            <marker date="1526556716982" expanded="true" signature="1728:2013" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/TrackBuilderScript.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <marker date="1526557273029" expanded="false" signature="6:125" ph="..." />
+            <marker date="1526557273029" expanded="true" signature="174:1387" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="231:269" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="485:518" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="533:782" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="580:612" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="834:865" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="902:1384" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="944:977" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="1005:1378" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="1050:1188" ph="{...}" />
+            <marker date="1526557273029" expanded="true" signature="1229:1374" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

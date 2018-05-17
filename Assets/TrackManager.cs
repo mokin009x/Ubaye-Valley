@@ -13,14 +13,18 @@ public class TrackManager : MonoBehaviour
     public bool foundStartPiece;
 
     public GameObject StraightPiecePrefab;
+	public GameObject CornerPiecePrefab;
+
+	public int Random;
 	// Use this for initialization
     private void Awake()
     {
         foundStartPiece = false;
+	    Random = 0;
     }
 
     void Start () {
-       
+	    
 	}
 	
 	// Update is called once per frame
@@ -29,6 +33,7 @@ public class TrackManager : MonoBehaviour
 
 	    if (Input.GetKeyDown(KeyCode.Space))
 	    {
+		    
 	        FindStartPiece();
 	        BuildTrack();
         }
@@ -42,27 +47,48 @@ public class TrackManager : MonoBehaviour
 
     public void FindStartPiece()
     {
-        var startInScene = GameObject.Find("StartPiece");
-        if (startInScene)
-        {
-            startpiece = startInScene;
-            TrackBuilderRefference = startpiece.GetComponent<TrackBuilderScript>();
-            foundStartPiece = true;
-            
-        }
+        var startInScene = GameObject.Find("StartPiece/Random");
+	    Debug.Log("test");
+	    startpiece = startInScene;
+	    TrackBuilderRefference = startInScene.GetComponent<TrackBuilderScript>();
+	    foundStartPiece = true;
     }
 
     public void BuildTrack()
     {
-        CurrentCollider = startpiece.transform.Find("FrontCollider").gameObject;
-        
-        if (TrackBuilderRefference.CurrentPiece == TrackBuilderScript.TrackPieceType.Straight)
-        {
-            Instantiate(StraightPiecePrefab, startpiece.transform.position, Quaternion.identity);
-        }
-        
+	    Random = Random + 1;
+	    
+	    /*
+	    if (TrackBuilderRefference.CurrentPieceType == TrackBuilderScript.TrackPieceType.Straight)
+	    {
+		    Instantiate(CornerPiecePrefab, new Vector3(0,0,10+ Random), Quaternion.identity);
+		    TrackBuilderRefference.FrontCollider.DetectingNow = true;
 
+		    Debug.Log("you got here");
+		    TrackBuilderRefference = TrackBuilderRefference.NextBuilder;
+	    }
+	    */
 
+	    
+		    
+	    if (TrackBuilderRefference.CurrentPieceType == TrackBuilderScript.TrackPieceType.Corner)
+		    {
+			    Instantiate(StraightPiecePrefab, new Vector3(0,0,10+ Random), Quaternion.identity);
+			    TrackBuilderRefference.FrontCollider.DetectingNow = true;
+
+			    Debug.Log("you got here");
+			    TrackBuilderRefference = TrackBuilderRefference.NextBuilder;
+			    
+ 
+		    }  
+	    
+		   
+	    
+		   
+
+		   
+	    
+      
     }
 
   
