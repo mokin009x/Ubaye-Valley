@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class testscript : MonoBehaviour {
 	float speed;
+    public AudioSource engineSound;
 	// Use this for initialization
 	void Start () {
 		speed = 70f;
@@ -15,10 +16,17 @@ public class testscript : MonoBehaviour {
 		if (Input.GetMouseButton(0)){
 			MoveForward ();
 		}
+        else
+        {
+            engineSound.Stop();
+
+        }
 			
 	}
 
 	public void MoveForward(){
 		transform.Translate (0f, 0f, speed * Time.deltaTime * 0.05f);
+        if (engineSound.isPlaying == false)
+        engineSound.Play();
 	}
 }
