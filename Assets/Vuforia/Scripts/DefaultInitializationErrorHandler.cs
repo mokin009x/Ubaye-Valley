@@ -6,14 +6,14 @@ All Rights Reserved.
 Confidential and Proprietary - Protected under copyright and other laws.
 ==============================================================================*/
 
+using UnityEditor;
 using UnityEngine;
 using Vuforia;
 
 /// <summary>
-/// A custom handler that registers for Vuforia initialization errors
-/// 
-/// Changes made to this file could be overwritten when upgrading the Vuforia version. 
-/// When implementing custom error handler behavior, consider inheriting from this class instead.
+///     A custom handler that registers for Vuforia initialization errors
+///     Changes made to this file could be overwritten when upgrading the Vuforia version.
+///     When implementing custom error handler behavior, consider inheriting from this class instead.
 /// </summary>
 public class DefaultInitializationErrorHandler : VuforiaMonoBehaviour
 {
@@ -32,35 +32,35 @@ public class DefaultInitializationErrorHandler : VuforiaMonoBehaviour
 
     #region PRIVATE_MEMBER_VARIABLES
 
-    string mErrorText = "";
-    bool mErrorOccurred;
+    private string mErrorText = "";
+    private bool mErrorOccurred;
 
-    const string headerLabel = "Vuforia Initialization Error";
+    private const string headerLabel = "Vuforia Initialization Error";
 
-    GUIStyle bodyStyle;
-    GUIStyle headerStyle;
-    GUIStyle footerStyle;
+    private GUIStyle bodyStyle;
+    private GUIStyle headerStyle;
+    private GUIStyle footerStyle;
 
-    Texture2D bodyTexture;
-    Texture2D headerTexture;
-    Texture2D footerTexture;
+    private Texture2D bodyTexture;
+    private Texture2D headerTexture;
+    private Texture2D footerTexture;
 
     #endregion // PRIVATE_MEMBER_VARIABLES
 
     #region UNTIY_MONOBEHAVIOUR_METHODS
 
-    void Awake()
+    private void Awake()
     {
         // Check for an initialization error on start.
         VuforiaRuntime.Instance.RegisterVuforiaInitErrorCallback(OnVuforiaInitializationError);
     }
 
-    void Start()
+    private void Start()
     {
         SetupGUIStyles();
     }
 
-    void OnGUI()
+    private void OnGUI()
     {
         // On error, create a full screen window.
         if (mErrorOccurred)
@@ -70,7 +70,7 @@ public class DefaultInitializationErrorHandler : VuforiaMonoBehaviour
     /// <summary>
     ///     When this game object is destroyed, it unregisters itself as event handler
     /// </summary>
-    void OnDestroy()
+    private void OnDestroy()
     {
         VuforiaRuntime.Instance.UnregisterVuforiaInitErrorCallback(OnVuforiaInitializationError);
     }
@@ -79,7 +79,7 @@ public class DefaultInitializationErrorHandler : VuforiaMonoBehaviour
 
     #region PRIVATE_METHODS
 
-    void DrawWindowContent(int id)
+    private void DrawWindowContent(int id)
     {
         var headerRect = new Rect(0, 0, Screen.width, Screen.height / 8);
         var bodyRect = new Rect(0, Screen.height / 8, Screen.width, Screen.height / 8 * 6);
@@ -91,14 +91,14 @@ public class DefaultInitializationErrorHandler : VuforiaMonoBehaviour
         if (GUI.Button(footerRect, "Close", footerStyle))
         {
 #if UNITY_EDITOR
-                    UnityEditor.EditorApplication.isPlaying = false;
-    #else
+            EditorApplication.isPlaying = false;
+#else
             Application.Quit();
 #endif
         }
     }
 
-    void SetErrorCode(VuforiaUnity.InitError errorCode)
+    private void SetErrorCode(VuforiaUnity.InitError errorCode)
     {
         switch (errorCode)
         {
@@ -142,7 +142,7 @@ public class DefaultInitializationErrorHandler : VuforiaMonoBehaviour
                     "a license key created on or after August 9th, 2016.";
                 break;
             case VuforiaUnity.InitError.INIT_NO_CAMERA_ACCESS:
-                mErrorText = 
+                mErrorText =
                     "User denied Camera access to this app.\n" +
                     "To restore, enable Camera access in Settings:\n" +
                     "Settings > Privacy > Camera > " + Application.productName + "\n" +
@@ -166,14 +166,14 @@ public class DefaultInitializationErrorHandler : VuforiaMonoBehaviour
         Debug.LogError("Vuforia initialization failed: " + errorCode + "\n\n" + errorTextConsole);
     }
 
-    void SetErrorOccurred(bool errorOccurred)
+    private void SetErrorOccurred(bool errorOccurred)
     {
         mErrorOccurred = errorOccurred;
     }
 
-    string getKeyInfo()
+    private string getKeyInfo()
     {
-        string key = VuforiaConfiguration.Instance.Vuforia.LicenseKey;
+        var key = VuforiaConfiguration.Instance.Vuforia.LicenseKey;
         string keyInfo;
         if (key.Length > 10)
             keyInfo =
@@ -187,7 +187,7 @@ public class DefaultInitializationErrorHandler : VuforiaMonoBehaviour
         return keyInfo;
     }
 
-    void SetupGUIStyles()
+    private void SetupGUIStyles()
     {
         // Called from Start() to determine physical size of device for text sizing
         var shortSidePixels = Screen.width < Screen.height ? Screen.width : Screen.height;
@@ -227,7 +227,7 @@ public class DefaultInitializationErrorHandler : VuforiaMonoBehaviour
         footerStyle.fontSize = (int) (28 * physicalSizeMultiplier * Screen.dpi / 160);
     }
 
-    Texture2D CreateSinglePixelTexture(Color color)
+    private Texture2D CreateSinglePixelTexture(Color color)
     {
         // Called by SetupGUIStyles() to create 1x1 texture
         var texture = new Texture2D(1, 1, TextureFormat.ARGB32, false);

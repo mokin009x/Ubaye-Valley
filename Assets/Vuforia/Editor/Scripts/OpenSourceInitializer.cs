@@ -9,12 +9,11 @@ countries.
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
-using Vuforia;
 using Vuforia.EditorClasses;
 
 /// <summary>
-/// Creates connection between open source files and the Vuforia library.
-/// Do not modify.
+///     Creates connection between open source files and the Vuforia library.
+///     Do not modify.
 /// </summary>
 [InitializeOnLoad]
 public static class OpenSourceInitializer
@@ -25,16 +24,16 @@ public static class OpenSourceInitializer
         ReplacePlaceHolders();
     }
 
-    static void ReplacePlaceHolders()
+    private static void ReplacePlaceHolders()
     {
         var trackablePlaceholders = Object.FindObjectsOfType<DefaultTrackableBehaviourPlaceholder>().ToList();
         var initErrorsPlaceholders = Object.FindObjectsOfType<DefaultInitializationErrorHandlerPlaceHolder>().ToList();
-        
+
         trackablePlaceholders.ForEach(ReplaceTrackablePlaceHolder);
         initErrorsPlaceholders.ForEach(ReplaceInitErrorPlaceHolder);
     }
-    
-    static void ReplaceTrackablePlaceHolder(DefaultTrackableBehaviourPlaceholder placeHolder)
+
+    private static void ReplaceTrackablePlaceHolder(DefaultTrackableBehaviourPlaceholder placeHolder)
     {
         var go = placeHolder.gameObject;
         go.AddComponent<DefaultTrackableEventHandler>();
@@ -42,7 +41,7 @@ public static class OpenSourceInitializer
         Object.DestroyImmediate(placeHolder);
     }
 
-    static void ReplaceInitErrorPlaceHolder(DefaultInitializationErrorHandlerPlaceHolder placeHolder)
+    private static void ReplaceInitErrorPlaceHolder(DefaultInitializationErrorHandlerPlaceHolder placeHolder)
     {
         var go = placeHolder.gameObject;
         go.AddComponent<DefaultInitializationErrorHandler>();
@@ -50,7 +49,7 @@ public static class OpenSourceInitializer
         Object.DestroyImmediate(placeHolder);
     }
 
-    class DefaultBehaviourAttacher : IDefaultBehaviourAttacher
+    private class DefaultBehaviourAttacher : IDefaultBehaviourAttacher
     {
         public void AddDefaultTrackableBehaviour(GameObject go)
         {

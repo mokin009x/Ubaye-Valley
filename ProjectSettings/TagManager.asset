@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CornerPiece
   - StraightPiece
+  - ActualStart
   layers:
   - Default
   - TransparentFX

@@ -10,10 +10,9 @@ using UnityEngine;
 using Vuforia;
 
 /// <summary>
-/// A custom handler that implements the ITrackableEventHandler interface.
-/// 
-/// Changes made to this file could be overwritten when upgrading the Vuforia version. 
-/// When implementing custom event handler behavior, consider inheriting from this class instead.
+///     A custom handler that implements the ITrackableEventHandler interface.
+///     Changes made to this file could be overwritten when upgrading the Vuforia version.
+///     When implementing custom event handler behavior, consider inheriting from this class instead.
 /// </summary>
 public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
 {
@@ -22,23 +21,6 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
     protected TrackableBehaviour mTrackableBehaviour;
 
     #endregion // PROTECTED_MEMBER_VARIABLES
-
-    #region UNITY_MONOBEHAVIOUR_METHODS
-
-    protected virtual void Start()
-    {
-        mTrackableBehaviour = GetComponent<TrackableBehaviour>();
-        if (mTrackableBehaviour)
-            mTrackableBehaviour.RegisterTrackableEventHandler(this);
-    }
-
-    protected virtual void OnDestroy()
-    {
-        if (mTrackableBehaviour)
-            mTrackableBehaviour.UnregisterTrackableEventHandler(this);
-    }
-
-    #endregion // UNITY_MONOBEHAVIOUR_METHODS
 
     #region PUBLIC_METHODS
 
@@ -73,6 +55,23 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
     }
 
     #endregion // PUBLIC_METHODS
+
+    #region UNITY_MONOBEHAVIOUR_METHODS
+
+    protected virtual void Start()
+    {
+        mTrackableBehaviour = GetComponent<TrackableBehaviour>();
+        if (mTrackableBehaviour)
+            mTrackableBehaviour.RegisterTrackableEventHandler(this);
+    }
+
+    protected virtual void OnDestroy()
+    {
+        if (mTrackableBehaviour)
+            mTrackableBehaviour.UnregisterTrackableEventHandler(this);
+    }
+
+    #endregion // UNITY_MONOBEHAVIOUR_METHODS
 
     #region PROTECTED_METHODS
 

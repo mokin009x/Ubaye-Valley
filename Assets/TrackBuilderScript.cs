@@ -1,68 +1,77 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.Serialization.Formatters;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TrackBuilderScript : MonoBehaviour
 {
-	public bool ActiveScript;
-	public enum TrackPieceType
-	{
-		Nothing,
-		Straight,
-		Corner
-	}
+    public enum TrackPieceType
+    {
+        Nothing,
+        Straight,
+        Corner,
+        Start
+    }
 
-	public TrackDetections FrontCollider;
-	public TrackDetections BackCollider;
+    public bool ActiveScript;
+    public TrackDetections BackCollider;
 
-	public TrackPieceType CurrentPieceType;
+    public TrackPieceType CurrentPieceType;
 
-	public TrackBuilderScript NextBuilder;
+    public TrackDetections FrontCollider;
 
-	// Use this for initialization
-	private void Awake()
-	{
-		ActiveScript = false;
-		if (this.gameObject.CompareTag("Finish"))
-		{
-			ActiveScript = true;
-		}
-	}
+    public TrackBuilderScript NextBuilder;
 
-	void Start()
-	{
-		
-		BackCollider = gameObject.transform.GetChild(0).GetComponent<TrackDetections>();
-		FrontCollider = gameObject.transform.GetChild(1).GetComponent<TrackDetections>();
-	}
+    // Use this for initialization
+    private void Awake()
+    {
+        ActiveScript = false;
+        if (gameObject.CompareTag("Finish")) ActiveScript = true;
+    }
 
-	// Update is called once per frame
-	void Update()
-	{
-		TrackDetectionEvent();
-	}
+    private void Start()
+    {
+        BackCollider = gameObject.transform.GetChild(0).GetComponent<TrackDetections>();
+        FrontCollider = gameObject.transform.GetChild(1).GetComponent<TrackDetections>();
+    }
 
-	private void TrackDetectionEvent()
-	{
-		
-		if (ActiveScript == true)
-		{
-			if (FrontCollider.DetectedPiece == 1)
-			{
-				CurrentPieceType = TrackPieceType.Corner;
-				NextBuilder = FrontCollider.DetectedObj.GetComponent<TrackBuilderScript>();
-			}
-			if (FrontCollider.DetectedPiece == 0)
-			{
-				CurrentPieceType = TrackPieceType.Straight;
-				NextBuilder = FrontCollider.DetectedObj.GetComponent<TrackBuilderScript>();
+    // Update is called once per frame
+    private void Update()
+    {
+        TrackDetectionEvent();
+    }
 
+    public void TrackDetectionEvent()
+    {
+        if (ActiveScript)
+        {
+            if (FrontCollider.DetectedPiece == 2)
+            {
+                CurrentPieceType = TrackPieceType.Start;
+            }
+            if (FrontCollider.DetectedPiece == 1)
+            {
+                CurrentPieceType = TrackPieceType.Corner;
+            }
 
-			}
-		}
-		
-	}
+            if (FrontCollider.DetectedPiece == 0)
+            {
+                CurrentPieceType = TrackPieceType.Straight;
+            }
+            Debug.Log(CurrentPieceType);
+        }
+    }
 
+    public void GetNextBuilder()
+    {
+        NextBuilder = FrontCollider.DetectedObj.GetComponent<TrackBuilderScript>();
+  
+    }
+
+    public void ActivateScript()
+    {
+        ActiveScript = true;
+    }
+
+    public void TurnOnDetection()
+    {
+        FrontCollider.DetectingNow = true;
+    }
 }
-

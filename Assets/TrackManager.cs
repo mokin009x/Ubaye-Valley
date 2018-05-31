@@ -1,110 +1,142 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Timers;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.Experimental.UIElements;
 
 public class TrackManager : MonoBehaviour
 {
-    public GameObject startpiece;
-    public TrackBuilderScript TrackBuilderReference;
+
+
+    public GameObject CornerPiecePrefab;
     public GameObject CurrentCollider;
-    public Button test;
     public bool foundStartPiece;
+    public Vector3 nextTrackSpawnModifier;
+
+    public bool buildingTrack = false;
+    public int Pieces;
+    public GameObject startpiece;
 
     public GameObject StraightPiecePrefab;
-	public GameObject CornerPiecePrefab;
+    public Button test;
+    public TrackBuilderScript TrackBuilderReference;
 
-	public Vector3 trackSpawnLocation;
-	public Vector3 nextTrackSpawnModifier;
-	
-	
-	
-	public int Random;
-	// Use this for initialization
+    public Vector3 trackSpawnLocation;
+    public Vector3 trackRotation;
+
+    public float buildDelay= 1;
+    private float buildTimer;
+
+
+    public GameObject currentPiece;
+    // Use this for initialization
     private void Awake()
     {
-	    trackSpawnLocation = Vector3.zero;
-	    nextTrackSpawnModifier = Vector3.zero;
 
         foundStartPiece = false;
-	    Random = 0;
+        Pieces = 0;
     }
 
-    void Start () {
-	    
-	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
+    private void Start()
+    {
+        trackSpawnLocation = GameObject.FindGameObjectWithTag("ActualStart").transform.position;
+    }
 
-	    if (Input.GetKeyDown(KeyCode.Space))
-	    {
-		    BuildTrack();
+    // Update is called once per frame
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+        Debug.Log(TotalPieces());
+        FindStartPiece();
+
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            buildingTrack = true;
+        }
+
+        if (buildingTrack == true)
+        {
+            BuildTrack();
 
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
-	    {
-		    FindStartPiece();
-
-	    }
-
-	    
-	}
+        buildTimer = Mathf.Clamp(buildTimer - Time.deltaTime,0,10);
+    }
 
     public void FindStartPiece()
     {
         var startInScene = GameObject.Find("StartPiece/Random");
-	    Debug.Log("test");
-	    startpiece = startInScene;
-	    TrackBuilderReference = startInScene.GetComponent<TrackBuilderScript>();
-	    foundStartPiece = true;
+        Debug.Log("test");
+        startpiece = startInScene;
+        TrackBuilderReference = startInScene.GetComponent<TrackBuilderScript>();
+        foundStartPiece = true;
     }
+
+
 
     public void BuildTrack()
     {
-	    Random = Random + 1;
-	    
-	    if (TrackBuilderReference.CurrentPieceType == TrackBuilderScript.TrackPieceType.Straight)
-	    {
-		    Debug.Log(TrackBuilderReference.CurrentPieceType);
-		    nextTrackSpawnModifier = nextTrackSpawnModifier + new Vector3(0, 0, 9);
-		    Instantiate(StraightPiecePrefab, trackSpawnLocation+nextTrackSpawnModifier, Quaternion.identity);
+        
 
-		    Debug.Log("you got here");
+        if (buildTimer <=0)
+        {
+            if (TrackBuilderReference.CurrentPieceType != TrackBuilderScript.TrackPieceType.Start)
+            {
+                if (TrackBuilderReference.CurrentPieceType == TrackBuilderScript.TrackPieceType.Straight)
+                {
+                    Debug.Log(TrackBuilderReference.CurrentPieceType);
+                    trackSpawnLocation = trackSpawnLocation+ nextTrackSpawnModifier;
 
-	    }
-	    else if (TrackBuilderReference.CurrentPieceType == TrackBuilderScript.TrackPieceType.Corner)
-	    {
-		    Debug.Log(TrackBuilderReference.CurrentPieceType);
+                    currentPiece = Instantiate(StraightPiecePrefab, trackSpawnLocation, Quaternion.identity);
 
-		    nextTrackSpawnModifier = nextTrackSpawnModifier + new Vector3(0, 0, 9);
+                    Debug.Log("you got here");
 
-		    Instantiate(CornerPiecePrefab, trackSpawnLocation+nextTrackSpawnModifier, Quaternion.Euler(0,180,0));
+                }
+                else if (TrackBuilderReference.CurrentPieceType == TrackBuilderScript.TrackPieceType.Corner)
+                {
+                    Debug.Log(TrackBuilderReference.CurrentPieceType);
 
-		    Debug.Log("you got here");
-		    
+                    trackSpawnLocation = trackSpawnLocation+ nextTrackSpawnModifier;
 
+                    currentPiece = Instantiate(CornerPiecePrefab, trackSpawnLocation, Quaternion.Euler(0, 180, 0));
+                    Debug.Log("you got here");
 
-	    }
-	    else
-	    {
-		    
-	    }
+                }
+                Builder();
+                PieceRotAndPos();
+            }
+            else
+            {
+                buildingTrack = false;
+            }
 
-	    Builder();
+            buildTimer = buildDelay;
+        }
 
+        }
+
+    public void PieceRotAndPos()
+    {
+        Vector3 frontDirection;
+        Vector3 BackDirection;
+
+        frontDirection = currentPiece.transform.position + currentPiece.transform.GetChild(1).transform.position;
+        Debug.Log(frontDirection);
     }
-	void Builder()
-	{
-		TrackBuilderReference.ActiveScript = false;
-		TrackBuilderReference = TrackBuilderReference.NextBuilder;
-		TrackBuilderReference.ActiveScript = true;
-		TrackBuilderReference.FrontCollider.DetectingNow = true;
 
-	}
+    private void Builder()
+    {
+        TrackBuilderReference.ActiveScript = false;
+        TrackBuilderReference.GetNextBuilder();
+        TrackBuilderReference = TrackBuilderReference.NextBuilder;
+        TrackBuilderReference.ActivateScript();
+        TrackBuilderReference.TurnOnDetection();
+    }
 
-  
+    public int TotalPieces()
+    {
+        var allPieces =  GameObject.FindGameObjectsWithTag("CornerPiece").Length + GameObject.FindGameObjectsWithTag("StraightPiece").Length + GameObject.FindGameObjectsWithTag("Finish").Length ;
+        return allPieces;
+    }
+    
 }
